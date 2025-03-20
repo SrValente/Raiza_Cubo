@@ -11,6 +11,33 @@ st.set_page_config(
 # CSS Customizado
 st.markdown("""
 <style>
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .overlay-title {
+        position: absolute;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        text-align: center;
+        z-index: 2;
+    }
     .card {
         background: white;
         border-radius: 15px;
@@ -24,31 +51,21 @@ st.markdown("""
         transform: translateY(-5px);
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
     }
-    .card-content {
-        padding: 25px;
-    }
-    .card-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 15px;
-    }
-    .card-description {
-        font-size: 0.95rem;
-        color: #6b7280;
-        line-height: 1.6;
-    }
-    .stButton>button {
-        width: 100%;
-        background: #3b82f6 !important;
-        color: white !important;
-        border: none !important;
-    }
 </style>
 """, unsafe_allow_html=True)
 
+# URL direta do vídeo no Google Drive
+video_url = "https://drive.google.com/uc?export=download&id=12xRaWtQxREjgYuHn6VLHaoFgM7W7qPgr"
+
+# Exibição do vídeo com título sobreposto
+st.markdown(f"""
+<div class="video-container">
+    <iframe src="{video_url}" frameborder="0" allowfullscreen autoplay loop muted></iframe>
+    <div class="overlay-title">Bem-vindo à Raiza</div>
+</div>
+""", unsafe_allow_html=True)
+
 # Conteúdo Principal
-st.title("☀️ Bem-vindo à Raiza")
 st.markdown("""
     <div style="text-align: center; margin-bottom: 40px;">
         <h3 style="color: #4b5563; font-weight: 400;">
@@ -93,78 +110,6 @@ with col2:
     
     if st.button("Acessar Módulo", key="btn_notas"):
         st.switch_page("pages/4_✏️_Notas.py")
-
-# Seção 2: Grade Horária, Gestão de Frequência e Consulta de Planos
-col3, col4, col5 = st.columns(3)
-
-with col3:
-    st.markdown("""
-    <div class="card">
-        <div class="card-content">
-            <div class="card-title">🕒 Grade Horária</div>
-            <div class="card-description">
-                Gestão inteligente de horários:<br><br>
-                • Visualização integrada<br>
-                • Exportação automática
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    if st.button("Acessar Módulo", key="btn_grade"):
-        st.switch_page("pages/2_🕒_Grade_Horária.py")
-
-with col4:
-    st.markdown("""
-    <div class="card">
-        <div class="card-content">
-            <div class="card-title">🗓 Gestão de Frequência</div>
-            <div class="card-description">
-                Controle de presenças integrado:<br><br>
-                • Lançamento em massa<br>
-                • Lançamento retroativo
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    if st.button("Acessar Módulo", key="btn_faltas"):
-        st.switch_page("pages/3_📅_Lançamento_Faltas.py")
-
-with col5:
-    st.markdown("""
-    <div class="card">
-        <div class="card-content">
-            <div class="card-title">🛂 Consulta de Planos</div>
-            <div class="card-description">
-                Acesse informações sobre planos educacionais:<br><br>
-                • Visualização dos alunos aderentes<br>
-                • Exportação de listas
-            </div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    if st.button("Acessar Módulo", key="btn_planos"):
-        st.switch_page("pages/5_🗂️_Consulta_Planos.py")
-
-# Seção 3: Central do Aluno
-st.markdown("""
-<div class="card">
-    <div class="card-content">
-        <div class="card-title">💎 Central do Aluno (EM BREVE)</div>
-        <div class="card-description">
-            Portal completo para gestão de informações estudantis:<br><br>
-            • Consulta de dados cadastrais<br>
-            • Histórico escolar completo<br>
-            • Notas online atualizadas<br>
-        </div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-if st.button("Acessar Central do Aluno", key="btn_central"):
-    st.switch_page("pages/0_👤_Central_Aluno.py")
 
 # Footer
 st.markdown("---")
