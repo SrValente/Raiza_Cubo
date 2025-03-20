@@ -68,8 +68,7 @@ with col1:
             <div class="card-description">
                 Registre e acompanhe incidentes escolares:<br><br>
                 • Histórico completo de alunos<br>
-                • Sistema de classificação<br>
-                • Relatórios personalizados
+                • Lançamento de ocorrências<br>
             </div>
         </div>
     </div>
@@ -86,7 +85,6 @@ with col2:
             <div class="card-description">
                 Sistema completo de avaliação:<br><br>
                 • Lançamento por disciplina<br>
-                • Cálculo de médias<br>
                 • Análise de desempenho
             </div>
         </div>
@@ -107,7 +105,6 @@ with col3:
             <div class="card-description">
                 Gestão inteligente de horários:<br><br>
                 • Visualização integrada<br>
-                • Alocação de professores<br>
                 • Exportação automática
             </div>
         </div>
@@ -125,8 +122,7 @@ with col4:
             <div class="card-description">
                 Controle de presenças integrado:<br><br>
                 • Lançamento em massa<br>
-                • Alertas automáticos<br>
-                • Relatórios por período
+                • Lançamento retroativo
             </div>
         </div>
     </div>
@@ -142,9 +138,8 @@ with col5:
             <div class="card-title">🛂 Consulta de Planos</div>
             <div class="card-description">
                 Acesse informações sobre planos educacionais:<br><br>
-                • Comparação entre planos<br>
-                • Regras e valores aplicáveis<br>
-                • Simulação financeira
+                • Visualização dos alunos aderentes<br>
+                • Exportação de listas
             </div>
         </div>
     </div>
@@ -162,7 +157,7 @@ st.markdown("""
             Portal completo para gestão de informações estudantis:<br><br>
             • Consulta de dados cadastrais<br>
             • Histórico escolar completo<br>
-            • Boletim online atualizado<br>
+            • Notas online atualizadas<br>
         </div>
     </div>
 </div>
