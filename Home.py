@@ -18,6 +18,7 @@ st.markdown("""
         transition: all 0.3s ease;
         margin-bottom: 25px;
         overflow: hidden;
+        border: 1px solid #ddd;
     }
     .card:hover {
         transform: translateY(-5px);
