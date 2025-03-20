@@ -50,7 +50,7 @@ st.markdown("""
 st.title("☀️ Bem-vindo à Raiza")
 st.markdown("""
     <div style="text-align: center; margin-bottom: 40px;">
-        <h3 style="color: #d5dae0; font-weight: 400;">
+        <h3 style="color: #4b5563; font-weight: 400;">
             Sua solução Integrada de Gestão Escolar
         </h3>
     </div>
