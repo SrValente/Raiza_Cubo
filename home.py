@@ -47,11 +47,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Conteúdo Principal
-st.title("🏩 Bem-vindo à Raiza")
+st.title("☀️ Bem-vindo à Raiza")
 st.markdown("""
     <div style="text-align: center; margin-bottom: 40px;">
         <h3 style="color: #4b5563; font-weight: 400;">
-            Plataforma Integrada de Gestão Escolar
+            Sua solução Integrada de Gestão Escolar
         </h3>
     </div>
 """, unsafe_allow_html=True)
