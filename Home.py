@@ -76,7 +76,7 @@ with col1:
     """, unsafe_allow_html=True)
     
     if st.button("Acessar Módulo", key="btn_ocorrencias"):
-        st.switch_page("pages/1_🗉️_Ocorrências.py")
+        st.switch_page("pages/1_📋_Ocorrências.py")
 
 with col2:
     st.markdown("""
@@ -133,7 +133,7 @@ with col4:
     """, unsafe_allow_html=True)
     
     if st.button("Acessar Módulo", key="btn_faltas"):
-        st.switch_page("pages/3_🗓_Lançamento_Faltas.py")
+        st.switch_page("pages/3_📅_Lançamento_Faltas.py")
 
 with col5:
     st.markdown("""
@@ -151,7 +151,7 @@ with col5:
     """, unsafe_allow_html=True)
     
     if st.button("Acessar Módulo", key="btn_planos"):
-        st.switch_page("pages/5_🛂_Consulta_Planos.py")
+        st.switch_page("pages/5_🗂️_Consulta_Planos.py")
 
 # Seção 3: Central do Aluno
 st.markdown("""
@@ -169,7 +169,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if st.button("Acessar Central do Aluno", key="btn_central"):
-    st.switch_page("pages/Central_Aluno.py")
+    st.switch_page("pages/0_👤_Central_Aluno.py")
 
 # Footer
 st.markdown("---")
