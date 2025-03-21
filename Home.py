@@ -8,11 +8,54 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# URL do vídeo hospedado no AWS S3
-video_url = "https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm"
+# URL do vídeo hospedado
+video_url = "URL_DO_SEU_VIDEO_OTIMIZADO"
 
-# ✅ Exibe o vídeo diretamente no Streamlit
-st.video(video_url)
+# CSS personalizado para o vídeo de fundo e texto sobreposto
+st.markdown(f"""
+    <style>
+        .video-container {{
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+        }}
+        .video-container video {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }}
+        .video-overlay {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }}
+    </style>
+    <div class="video-container">
+        <video autoplay loop muted playsinline>
+            <source src="{video_url}" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-overlay">Bem-vindo à Raiza</div>
+    </div>
+""", unsafe_allow_html=True)
+
+# Conteúdo adicional da página
+st.write("Conteúdo adicional abaixo do vídeo de boas-vindas.")
+
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
 col1, col2 = st.columns(2)
