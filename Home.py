@@ -8,53 +8,11 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS atualizado para garantir que o vídeo apareça corretamente
-st.markdown("""
-    <style>
-        .hero-container {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-        .hero-container video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: -1;
-            background-color: black;  /* 🔹 Caso o vídeo não carregue, mostra um fundo preto */
-        }
-        .hero-title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3.5rem;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-    </style>
-""", unsafe_allow_html=True)
+# URL do vídeo hospedado no AWS S3
+video_url = "https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm"
 
-
-# Vídeo de fundo com título sobreposto
-st.markdown(f"""
-<div class="hero-container">
-    <video autoplay loop muted>
-        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
-        Seu navegador não suporta vídeos. 
-    </video>
-    <div class="hero-title">Bem-vindo à Raiza</div>
-</div>
-""", unsafe_allow_html=True)
+# ✅ Exibe o vídeo diretamente no Streamlit
+st.video(video_url)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
 col1, col2 = st.columns(2)
