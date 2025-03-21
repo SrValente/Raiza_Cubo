@@ -8,9 +8,38 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS Customizado
+# CSS + HTML para vídeo de fundo com título
 st.markdown("""
 <style>
+    .hero-container {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+    .hero-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: -1;
+    }
+    .hero-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
     .card {
         background: white;
         border-radius: 15px;
@@ -47,14 +76,15 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Conteúdo Principal
-st.title("☀️ Bem-vindo à Raiza")
-st.markdown("""
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h3 style="color: #4b5563; font-weight: 400;">
-            Sua solução Integrada de Gestão Escolar
-        </h3>
-    </div>
+# Vídeo de fundo com título sobreposto
+st.markdown(f"""
+<div class="hero-container">
+    <video autoplay loop muted playsinline>
+        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
+        Seu navegador não suporta vídeos.
+    </video>
+    <div class="hero-title">Bem-vindo à Raiza</div>
+</div>
 """, unsafe_allow_html=True)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
@@ -90,7 +120,7 @@ with col2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
     if st.button("Acessar Módulo", key="btn_notas"):
         st.switch_page("pages/4_✏️_Notas.py")
 
@@ -110,7 +140,7 @@ with col3:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
     if st.button("Acessar Módulo", key="btn_grade"):
         st.switch_page("pages/2_🕒_Grade_Horária.py")
 
@@ -127,7 +157,7 @@ with col4:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
     if st.button("Acessar Módulo", key="btn_faltas"):
         st.switch_page("pages/3_📅_Lançamento_Faltas.py")
 
@@ -144,7 +174,7 @@ with col5:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
+
     if st.button("Acessar Módulo", key="btn_planos"):
         st.switch_page("pages/5_🗂️_Consulta_Planos.py")
 
