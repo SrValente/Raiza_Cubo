@@ -8,48 +8,51 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS adicional para centralizar o título
-st.markdown("""
-<style>
-.overlay-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    pointer-events: none;
-}
-.embed-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 28%;
-    margin-bottom: 2rem;
-}
-.embed-wrapper iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-    top: 0;
-    left: 0;
-}
-</style>
+# ✅ Link direto do vídeo (.webm) — troque pelo seu real
+video_url = "https://www.canva.com/design/DAGiXYEL7DI/W_ubAido7e9WaxR562Hsmw/watch?utm_content=DAGiXYEL7DI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5728a0a252"  # 🔁 Substitua aqui
+
+# CSS + HTML do vídeo de fundo com texto sobreposto
+st.markdown(f"""
+    <style>
+        .hero-container {{
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }}
+        .hero-container video {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }}
+        .hero-title {{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }}
+    </style>
+
+    <div class="hero-container">
+        <video autoplay loop muted playsinline>
+            <source src="{video_url}" type="video/webm">
+        </video>
+        <div class="hero-title">Bem-vindo à Raiza</div>
+    </div>
 """, unsafe_allow_html=True)
 
-# Player do Canva com texto sobreposto
-st.markdown(f"""
-<div class="embed-wrapper">
-    <div class="overlay-title">Bem-vindo à Raiza</div>
-    <iframe loading="lazy"
-        src="https://www.canva.com/design/DAGiXYEL7DI/W_ubAido7e9WaxR562Hsmw/watch?embed"
-        allowfullscreen="allowfullscreen" allow="fullscreen">
-    </iframe>
-</div>
-""", unsafe_allow_html=True)
 
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
