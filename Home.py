@@ -8,52 +8,53 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS atualizado para garantir que o vídeo apareça corretamente
+# CSS Customizado
 st.markdown("""
-    <style>
-        .hero-container {
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-        .hero-container video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: -1;
-            background-color: black;  /* 🔹 Caso o vídeo não carregue, mostra um fundo preto */
-        }
-        .hero-title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3.5rem;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-    </style>
+<style>
+    .card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+    .card-content {
+        padding: 25px;
+    }
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+    .card-description {
+        font-size: 0.95rem;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+    .stButton>button {
+        width: 100%;
+        background: #3b82f6 !important;
+        color: white !important;
+        border: none !important;
+    }
+</style>
 """, unsafe_allow_html=True)
 
-
-# Vídeo de fundo com título sobreposto
-st.markdown(f"""
-<div class="hero-container">
-    <video autoplay loop muted playsinline>
-        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
-        Seu navegador não suporta vídeos. 
-    </video>
-    <div class="hero-title">Bem-vindo à Raiza</div>
-</div>
+# Conteúdo Principal
+st.title("☀️ Bem-vindo à Raiza")
+st.markdown("""
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3 style="color: #4b5563; font-weight: 400;">
+            Sua solução Integrada de Gestão Escolar
+        </h3>
+    </div>
 """, unsafe_allow_html=True)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
@@ -89,7 +90,7 @@ with col2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     if st.button("Acessar Módulo", key="btn_notas"):
         st.switch_page("pages/4_✏️_Notas.py")
 
@@ -109,7 +110,7 @@ with col3:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     if st.button("Acessar Módulo", key="btn_grade"):
         st.switch_page("pages/2_🕒_Grade_Horária.py")
 
@@ -126,7 +127,7 @@ with col4:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     if st.button("Acessar Módulo", key="btn_faltas"):
         st.switch_page("pages/3_📅_Lançamento_Faltas.py")
 
@@ -143,7 +144,7 @@ with col5:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
+    
     if st.button("Acessar Módulo", key="btn_planos"):
         st.switch_page("pages/5_🗂️_Consulta_Planos.py")
 
