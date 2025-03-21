@@ -46,7 +46,7 @@ st.markdown(f"""
     </style>
     <div class="video-container">
         <video autoplay loop muted playsinline>
-            <source src="{video_url}" type="video/mp4">
+            <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
             Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-overlay">Bem-vindo à Raiza</div>
