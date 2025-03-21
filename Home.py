@@ -8,52 +8,54 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ✅ Link direto do vídeo (.webm) — troque pelo seu real
-video_url = "https://www.canva.com/design/DAGiXYEL7DI/W_ubAido7e9WaxR562Hsmw/watch?utm_content=DAGiXYEL7DI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h5728a0a252"  # 🔁 Substitua aqui
-
-# CSS + HTML do vídeo de fundo com texto sobreposto
-st.markdown(f"""
-    <style>
-        .hero-container {{
-            position: relative;
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-            margin-bottom: 40px;
-        }}
-        .hero-container video {{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: -1;
-        }}
-        .hero-title {{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3.5rem;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }}
-    </style>
-
-    <div class="hero-container">
-        <video autoplay loop muted playsinline>
-            <source src="{video_url}" type="video/webm">
-        </video>
-        <div class="hero-title">Bem-vindo à Raiza</div>
-    </div>
+# CSS Customizado
+st.markdown("""
+<style>
+    .card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+    .card-content {
+        padding: 25px;
+    }
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+    .card-description {
+        font-size: 0.95rem;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+    .stButton>button {
+        width: 100%;
+        background: #3b82f6 !important;
+        color: white !important;
+        border: none !important;
+    }
+</style>
 """, unsafe_allow_html=True)
 
-
+# Conteúdo Principal
+st.title("☀️ Bem-vindo à Raiza")
+st.markdown("""
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h3 style="color: #4b5563; font-weight: 400;">
+            Sua solução Integrada de Gestão Escolar
+        </h3>
+    </div>
+""", unsafe_allow_html=True)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
 col1, col2 = st.columns(2)
