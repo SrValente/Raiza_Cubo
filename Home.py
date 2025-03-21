@@ -48,7 +48,7 @@ st.markdown("""
 # Vídeo de fundo com título sobreposto
 st.markdown(f"""
 <div class="hero-container">
-    <video autoplay loop muted playsinline>
+    <video autoplay loop muted>
         <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
         Seu navegador não suporta vídeos. 
     </video>
