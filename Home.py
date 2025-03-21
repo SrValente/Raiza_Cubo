@@ -49,7 +49,7 @@ st.markdown("""
 st.markdown(f"""
 <div class="hero-container">
     <video autoplay loop muted playsinline>
-        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/mp4">
+        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
         Seu navegador não suporta vídeos. 
     </video>
     <div class="hero-title">Bem-vindo à Raiza</div>
