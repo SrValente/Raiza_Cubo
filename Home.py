@@ -8,10 +8,10 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# HTML + CSS para vídeo de fundo via YouTube
+# Vídeo de fundo (YouTube)
 st.markdown("""
 <style>
-    .video-background {
+    .yt-bg {
         position: fixed;
         top: 0;
         left: 0;
@@ -21,72 +21,44 @@ st.markdown("""
         overflow: hidden;
     }
 
-    .video-background iframe {
-        position: absolute;
-        top: -50px;
-        left: 0;
-        width: 100%;
-        height: 110vh;
+    .yt-bg iframe {
+        width: 100vw;
+        height: 100vh;
+        border: none;
         pointer-events: none;
     }
 
-    .overlay-text {
+    .header-overlay {
         position: relative;
+        z-index: 1;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
         text-align: center;
-        padding-top: 40px;
-        font-size: 3rem;
-        font-weight: bold;
+    }
+
+    .header-overlay h1 {
         color: white;
+        font-size: 3rem;
+        font-weight: 700;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
-    .card {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        margin-bottom: 25px;
-        overflow: hidden;
-        border: 1px solid #ddd;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-    }
-    .card-content {
-        padding: 25px;
-    }
-    .card-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 15px;
-    }
-    .card-description {
-        font-size: 0.95rem;
-        color: #6b7280;
-        line-height: 1.6;
-    }
-    .stButton>button {
-        width: 100%;
-        background: #3b82f6 !important;
-        color: white !important;
-        border: none !important;
+    .header-overlay h3 {
+        color: white;
+        font-weight: 400;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
     }
 </style>
-<div class="video-background">
-    <iframe src="https://www.youtube.com/embed/Hy-vN2uOLrY?autoplay=1&mute=1&controls=0&loop=1&playlist=Hy-vN2uOLrY&modestbranding=1&showinfo=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-</div>
-<div class="overlay-text">Bem-vindo à Raiza</div>
-""", unsafe_allow_html=True)
 
-# Conteúdo Principal
-st.markdown("""
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h3 style="color: #4b5563; font-weight: 400;">
-            Sua solução Integrada de Gestão Escolar
-        </h3>
-    </div>
+<div class="yt-bg">
+    <iframe src="https://www.youtube.com/embed/Hy-vN2uOLrY?autoplay=1&mute=1&controls=0&loop=1&playlist=Hy-vN2uOLrY&modestbranding=1&showinfo=0"
+        allow="autoplay">
+    </iframe>
+</div>
+<div class="header-overlay">
+    <h1>Bem-vindo à Raiza</h1>
+    <h3>Sua solução Integrada de Gestão Escolar</h3>
+</div>
 """, unsafe_allow_html=True)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
