@@ -8,9 +8,38 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS Customizado
+# HTML + CSS para vídeo de fundo via YouTube
 st.markdown("""
 <style>
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .video-background iframe {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        height: 110vh;
+        pointer-events: none;
+    }
+
+    .overlay-text {
+        position: relative;
+        text-align: center;
+        padding-top: 40px;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
     .card {
         background: white;
         border-radius: 15px;
@@ -45,10 +74,13 @@ st.markdown("""
         border: none !important;
     }
 </style>
+<div class="video-background">
+    <iframe src="https://www.youtube.com/embed/Hy-vN2uOLrY?autoplay=1&mute=1&controls=0&loop=1&playlist=Hy-vN2uOLrY&modestbranding=1&showinfo=0" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+</div>
+<div class="overlay-text">Bem-vindo à Raiza</div>
 """, unsafe_allow_html=True)
 
 # Conteúdo Principal
-st.title("☀️ Bem-vindo à Raiza")
 st.markdown("""
     <div style="text-align: center; margin-bottom: 40px;">
         <h3 style="color: #4b5563; font-weight: 400;">
