@@ -142,7 +142,6 @@ if ra_aluno and codcoligada and codfilial:
             st.dataframe(df)
         else:
             st.warning("⚠ Nenhuma ocorrência encontrada.")
-            st.error(f"Detalhes da consulta: CODCOLIGADA={codcoligada};CODFILIAL={codfilial};RA={ra_aluno}")
 
     # Botão para exibir o formulário de nova ocorrência
     if st.button("➕ Nova Ocorrência"):
