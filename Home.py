@@ -11,6 +11,30 @@ st.set_page_config(
 # CSS Customizado
 st.markdown("""
 <style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    #video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .overlay-text {
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
     .card {
         background: white;
         border-radius: 15px;
@@ -45,10 +69,13 @@ st.markdown("""
         border: none !important;
     }
 </style>
+<video id="video-background" autoplay loop muted>
+    <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.mp4" type="video/mp4">
+</video>
+<div class="overlay-text">Bem-vindo à Raiza</div>
 """, unsafe_allow_html=True)
 
 # Conteúdo Principal
-st.title("☀️ Bem-vindo à Raiza")
 st.markdown("""
     <div style="text-align: center; margin-bottom: 40px;">
         <h3 style="color: #4b5563; font-weight: 400;">
