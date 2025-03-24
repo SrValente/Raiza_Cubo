@@ -8,54 +8,50 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS Customizado
+# HTML e CSS para fundo animado com vídeo
 st.markdown("""
 <style>
-    .card {
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        margin-bottom: 25px;
+    .video-bg-container {
+        position: relative;
+        height: 60vh;
         overflow: hidden;
-        border: 1px solid #ddd;
     }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+
+    .video-bg-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
     }
-    .card-content {
-        padding: 25px;
-    }
-    .card-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 15px;
-    }
-    .card-description {
-        font-size: 0.95rem;
-        color: #6b7280;
-        line-height: 1.6;
-    }
-    .stButton>button {
-        width: 100%;
-        background: #3b82f6 !important;
-        color: white !important;
-        border: none !important;
+
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        z-index: 2;
+        text-align: center;
     }
 </style>
+
+<div class="video-bg-container">
+    <video autoplay muted loop playsinline>
+        <source src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm" type="video/webm">
+    </video>
+    <div class="overlay-text">Bem-vindo à Raiza</div>
+</div>
 """, unsafe_allow_html=True)
 
-# Conteúdo Principal
-st.title("☀️ Bem-vindo à Raiza")
-st.markdown("""
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h3 style="color: #4b5563; font-weight: 400;">
-            Sua solução Integrada de Gestão Escolar
-        </h3>
-    </div>
-""", unsafe_allow_html=True)
 
 # Seção 1: Registro de Ocorrências e Gestão de Notas
 col1, col2 = st.columns(2)
