@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Vídeo de fundo (YouTube)
+# CSS completo: fundo + título + cards
 st.markdown("""
 <style>
     .yt-bg {
@@ -48,6 +48,45 @@ st.markdown("""
         font-weight: 400;
         text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
     }
+
+    .card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+        color: #6b7280;
+        line-height: 1.6;
+    }
+
+    .stButton>button {
+        width: 100%;
+        background: #3b82f6 !important;
+        color: white !important;
+        border: none !important;
+    }
 </style>
 
 <div class="yt-bg">
@@ -77,7 +116,6 @@ with col1:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
     if st.button("Acessar Módulo", key="btn_ocorrencias"):
         st.switch_page("pages/1_📋_Ocorrências.py")
 
@@ -94,7 +132,6 @@ with col2:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
     if st.button("Acessar Módulo", key="btn_notas"):
         st.switch_page("pages/4_✏️_Notas.py")
 
@@ -114,7 +151,6 @@ with col3:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
     if st.button("Acessar Módulo", key="btn_grade"):
         st.switch_page("pages/2_🕒_Grade_Horária.py")
 
@@ -131,7 +167,6 @@ with col4:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
     if st.button("Acessar Módulo", key="btn_faltas"):
         st.switch_page("pages/3_📅_Lançamento_Faltas.py")
 
@@ -148,7 +183,6 @@ with col5:
         </div>
     </div>
     """, unsafe_allow_html=True)
-    
     if st.button("Acessar Módulo", key="btn_planos"):
         st.switch_page("pages/5_🗂️_Consulta_Planos.py")
 
@@ -166,7 +200,6 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
 if st.button("Acessar Central do Aluno", key="btn_central"):
     st.switch_page("pages/0_👤_Central_Aluno.py")
 
