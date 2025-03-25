@@ -8,23 +8,17 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# CSS completo: fundo + título + cards
+# CSS e Vídeo de Fundo
 st.markdown("""
 <style>
-    .yt-bg {
+    .video-bg {
         position: fixed;
         top: 0;
         left: 0;
-        height: 100vh;
         width: 100vw;
+        height: 100vh;
+        object-fit: cover;
         z-index: -1;
-        overflow: hidden;
-    }
-
-    .yt-bg iframe {
-        width: 100vw;
-        height: 100vh;
-        border: none;
         pointer-events: none;
     }
 
@@ -89,18 +83,17 @@ st.markdown("""
     }
 </style>
 
-<div class="yt-bg">
-    <iframe src="https://www.youtube.com/embed/Hy-vN2uOLrY?autoplay=1&mute=1&controls=0&loop=1&playlist=Hy-vN2uOLrY&modestbranding=1&showinfo=0"
-        allow="autoplay">
-    </iframe>
-</div>
+<video class="video-bg" autoplay muted loop playsinline>
+    <source src="static/Raiza fundo branco.mp4" type="video/mp4">
+</video>
+
 <div class="header-overlay">
     <h1>Bem-vindo à Raiza</h1>
-    <h3>Sua solução Integrada de Gestão Escolar</h3>
+    <h3>Sua solução integrada de gestão escolar</h3>
 </div>
 """, unsafe_allow_html=True)
 
-# Seção 1: Registro de Ocorrências e Gestão de Notas
+# Seção 1: Ocorrências e Notas
 col1, col2 = st.columns(2)
 
 with col1:
@@ -135,7 +128,7 @@ with col2:
     if st.button("Acessar Módulo", key="btn_notas"):
         st.switch_page("pages/4_✏️_Notas.py")
 
-# Seção 2: Grade Horária, Gestão de Frequência e Consulta de Planos
+# Seção 2: Grade Horária, Faltas, Planos
 col3, col4, col5 = st.columns(3)
 
 with col3:
