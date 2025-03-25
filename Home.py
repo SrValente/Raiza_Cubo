@@ -81,7 +81,7 @@ st.html("""
         border: none !important;
     }
 </style>
-<div style="position: relative; width: 50%; left: 25%; height: 400px; overflow: hidden;">
+<div style="position: absolute; width: 50%; left: 25%; height: 400px; overflow: hidden;">
   <video playsinline loop muted autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
     <source type="video/webm" src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm">
   </video>
