@@ -87,7 +87,6 @@ st.html("""
   </video>
   <div class="header-overlay" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; color: #fff;">
     <h1>Bem-vindo à Raiza</h1>
-    <h3>Sua solução integrada de gestão escolar</h3>
   </div>
 </div>
 
