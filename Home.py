@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 # CSS e Vídeo de Fundo
-st.markdown("""
+st.html("""
 <style>
     .video-bg {
         position: fixed;
@@ -18,7 +18,6 @@ st.markdown("""
         width: 100vw;
         height: 100vh;
         object-fit: cover;
-        z-index: -1;
         pointer-events: none;
     }
 
@@ -82,16 +81,18 @@ st.markdown("""
         border: none !important;
     }
 </style>
-
-<video class="video-bg" autoplay muted loop playsinline>
-    <source src="static/Raiza fundo branco.mp4" type="video/mp4">
-</video>
-
-<div class="header-overlay">
+<div style="position: relative; width: 50%; left: 25%; height: 400px; overflow: hidden;">
+  <video playsinline loop muted autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+    <source type="video/webm" src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm">
+  </video>
+  <div class="header-overlay" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; color: #fff;">
     <h1>Bem-vindo à Raiza</h1>
     <h3>Sua solução integrada de gestão escolar</h3>
+  </div>
 </div>
-""", unsafe_allow_html=True)
+
+
+""")
 
 # Seção 1: Ocorrências e Notas
 col1, col2 = st.columns(2)
