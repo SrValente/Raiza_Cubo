@@ -85,7 +85,7 @@ st.html("""
   <video playsinline loop muted autoplay style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
     <source type="video/webm" src="https://raizeducacao.s3.sa-east-1.amazonaws.com/raiza.webm">
   </video>
-  <div class="header-overlay" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; color: #fff;">
+  <div class="header-overlay" style="position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 92%; color: #fff;">
     <h1>Bem-vindo à Raiza</h1>
   </div>
 </div>
