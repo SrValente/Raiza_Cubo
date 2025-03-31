@@ -41,7 +41,7 @@ st.title("🔍 Consulta de Ocorrências - TOTVS")
 # Listagem de filiais
 filiais = [
     {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BARRA", "CODCOLIGADA": 5, "CODFILIAL": 2},
-    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO", "CODCOLIGADA": 5, "CODFILIAL": 2},
+    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO", "CODCOLIGADA": 5, "CODFILIAL": 5},
 ]
 
 filiais_opcoes = {f"{f['NOMEFANTASIA']} ({f['CODFILIAL']})": (f['CODCOLIGADA'], f['CODFILIAL']) for f in filiais}
