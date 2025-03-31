@@ -13,16 +13,14 @@ st.set_page_config(page_title="Consulta de Ocorrências - TOTVS", layout="wide")
 
 # Configurações do Gmail
 GMAIL_USER = "bi@raizeducacao.com.br"
-GMAIL_PASSWORD = "jqby exvy ripr ptwd"  # Senha de App
+GMAIL_PASSWORD = "jqby exvy ripr ptwd"
 
-# Função de envio de e-mail
 def enviar_email(destinatarios, assunto, corpo):
     try:
         msg = MIMEMultipart()
         msg['From'] = GMAIL_USER
         msg['To'] = ", ".join(destinatarios)
         msg['Subject'] = assunto
-        
         msg.attach(MIMEText(corpo, 'plain'))
         
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
@@ -42,8 +40,8 @@ st.title("🔍 Consulta de Ocorrências - TOTVS")
 
 # Listagem de filiais
 filiais = [
-    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BARRA",       "CODCOLIGADA": 5,  "CODFILIAL": 2},
-    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO",     "CODCOLIGADA": 5,  "CODFILIAL": 2},
+    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BARRA", "CODCOLIGADA": 5, "CODFILIAL": 2},
+    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO", "CODCOLIGADA": 5, "CODFILIAL": 2},
 ]
 
 filiais_opcoes = {f"{f['NOMEFANTASIA']} ({f['CODFILIAL']})": (f['CODCOLIGADA'], f['CODFILIAL']) for f in filiais}
@@ -108,7 +106,8 @@ if ra_aluno and codcoligada and codfilial:
     if "nova_ocorrencia" in st.session_state:
         st.markdown("### 📝 Registrar Nova Ocorrência")
         descricao_tipo = st.selectbox("Selecione o Tipo de Ocorrência:", ["Advertência", "Suspensão", "Outros"])
-        observacoes_input = st.text_area("Observações")
+        observacoes_input = st.text_area("Observações*", placeholder="Descreva os detalhes da ocorrência...")
+        observacoes_internas_input = st.text_area("Observações Internas", placeholder="Registro para uso exclusivo da equipe pedagógica")
         enviar_email_check = st.checkbox("✉️ Enviar notificação por e-mail aos responsáveis")
         cod_ocorrencia_tipo = 30
 
@@ -134,6 +133,7 @@ if ra_aluno and codcoligada and codfilial:
          <DISPONIVELWEB>0</DISPONIVELWEB>
          <RESPONSAVELCIENTE>0</RESPONSAVELCIENTE>
          <OBSERVACOES>{escape(observacoes_input)}</OBSERVACOES>
+         <OBSERVACOESINTERNAS>{escape(observacoes_internas_input)}</OBSERVACOESINTERNAS>
          <POSSUIARQUIVO>N</POSSUIARQUIVO>
    </SOcorrenciaAluno>
 </EduOcorrenciaAluno>]]></tot:XML>
