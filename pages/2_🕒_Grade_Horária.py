@@ -36,7 +36,7 @@ BASE_URL = "https://raizeducacao160286.rm.cloudtotvs.com.br:8051/api/framework/v
 
 filiais = [
     {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BARRA",       "CODCOLIGADA": 5,  "CODFILIAL": 2},
-    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO",     "CODCOLIGADA": 5,  "CODFILIAL": 2},
+    {"NOMEFANTASIA": "COLÉGIO E CURSO AO CUBO BOTAFOGO",     "CODCOLIGADA": 5,  "CODFILIAL": 5},
 ]
 
 def obter_turmas(codcoligada, codfilial):
