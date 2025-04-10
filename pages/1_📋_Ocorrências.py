@@ -192,7 +192,6 @@ if ra_aluno and codcoligada and codfilial:
 
                             Atenciosamente,
                             Coordenação Pedagógica
-                            RAÍZ EDUCAÇÃO
                             """
                             
                             if enviar_email(destinatarios, "Registro de Ocorrência - RAÍZ EDUCAÇÃO", corpo_email):
