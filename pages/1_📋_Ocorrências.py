@@ -105,13 +105,22 @@ if ra_aluno and codcoligada and codfilial:
 
     if "nova_ocorrencia" in st.session_state:
         st.markdown("### 📝 Registrar Nova Ocorrência")
-        descricao_tipo = st.selectbox("Selecione o Tipo de Ocorrência:", ["Advertência", "Suspensão", "Outros"])
+        # Mapeamento das ocorrências conforme a regra especificada
+        ocorrencias_map = {
+            "Comunicação Oral": {"grupo": 1, "tipo": 1},
+            "Advertência": {"grupo": 1, "tipo": 2},
+            "Suspensão": {"grupo": 1, "tipo": 3},
+        }
+        descricao_tipo = st.selectbox("Selecione o Tipo de Ocorrência:", list(ocorrencias_map.keys()))
         observacoes_input = st.text_area("Observações*", placeholder="Descreva os detalhes da ocorrência...")
         observacoes_internas_input = st.text_area("Observações Internas", placeholder="Registro para uso exclusivo da equipe pedagógica")
         enviar_email_check = st.checkbox("✉️ Enviar notificação por e-mail aos responsáveis")
-        cod_ocorrencia_tipo = 30
 
         if st.button("✅ Concluir Inclusão da Ocorrência") and id_perlet:
+            # Obter os códigos a partir do mapeamento
+            cod_ocorrencia_grupo = ocorrencias_map[descricao_tipo]["grupo"]
+            cod_ocorrencia_tipo = ocorrencias_map[descricao_tipo]["tipo"]
+
             xml_data = f"""<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tot="http://www.totvs.com/">
    <soapenv:Header/>
    <soapenv:Body>
@@ -122,7 +131,7 @@ if ra_aluno and codcoligada and codfilial:
          <CODCOLIGADA>{codcoligada}</CODCOLIGADA>
          <IDOCORALUNO>-1</IDOCORALUNO>
          <RA>{ra_aluno}</RA>
-         <CODOCORRENCIAGRUPO>4</CODOCORRENCIAGRUPO>
+         <CODOCORRENCIAGRUPO>{cod_ocorrencia_grupo}</CODOCORRENCIAGRUPO>
          <CODOCORRENCIATIPO>{cod_ocorrencia_tipo}</CODOCORRENCIATIPO>
          <IDPERLET>{id_perlet}</IDPERLET>
          <CODPERLET>2025</CODPERLET>
@@ -165,7 +174,7 @@ if ra_aluno and codcoligada and codfilial:
                         
                         if destinatarios:
                             corpo_email = f"""
-                            COMUNICADO OFICIAL - RAÍZ EDUCAÇÃO
+                            COMUNICADO OFICIAL - RAIZ EDUCAÇÃO
 
                             Prezado Responsável,
 
