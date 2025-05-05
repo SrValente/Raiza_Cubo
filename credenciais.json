@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "valiant-splicer-421319",
+  "private_key_id": "76569bedb329e791ac261085d2f7b1caee10c286",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCUShs8q0sKeFVO\n/93bCFGFSdXFHn6C06LW0K6khuB0I8i01olLBERPLJGNtda+xsLJosybtx2VhTbn\nSqkYF9OHifipaC6/oyW8Ue9Pzfr4mKhOIP4LLcvIevQZI3se5mw2EEsEUdEetNC6\nS5Ry2RCmaOdy+SfvA/M+Vu2Pw7TdRoSfqI1nbml0cGujcaMj7Eqv6/o3uvIqBdY2\nmKw5bRYDtQBBQuI0CcgM92hTCvFPdvxu6UKYddIYlwY+e+oJPJY/kDAh9TAVBXE0\nfpL0EenXZSmGUxD+P6VUq+Po2k3+NtsZH4p3hkBn4MCSC7+5bWoOvnEHDv1AFyK2\n7v4OFDEZAgMBAAECggEAE+z+SnFw8Kv5OJeQkeNFAv5II4fks4MpJSje4rw98lUx\nnb0bLzGYVTQ1rb9SpwlxuKLvz/ez2bjQBxXE8XgYJCURvP/DElyjkDHJUKWqtNdc\nfD0aLdneQWbmIG+gVmdbgItBbUfqK/BbgMDxploNDvNXMF+S8l7LQ2PuYYxIZBgm\nikzcsxKo1rPlcnRF27fDRipHa70m78g5bj3VdEefCFggMpoS0YiQm7NEcgLydydi\n5m0WpXMnSPAVgXSPMGfzhg1oXI5E0nY9cml+Lrh5KffO68inz0n4JwEdWmamX55T\n8vyXskEWaUfu3sXYzuCIn7a3P2eCEeRlG3Z6HaZbFQKBgQDJ7K6tvwX5PhYSUxPN\n3TkvKSU33LK7Vkwvx2unap7VsvxKHtupXlDgfho3qvF5fpzvIC45GTjhAAOYfvSq\nHgFmM2ZNUIaJXZXgHjAr1p6fQ9OOawP2u7sW8YqZF5XyHy8zmwYUqWN1AZanrEkT\nygmEkICnCzfzYytqpaeSSwxJbQKBgQC8AF8H6i77yFvXdh9WZjcuZSmRB7UTTD7u\nXMRF3v0EJeztfflS/rb5eOBAs9yNTZbcnO/tp2PRAc2bcgomHN1WHWs3dukxdlLp\n07NlvDpEHgYjI2cgXb+fFOMOlVpmk2evmBKQsUDtpe3EBViiryvdDjlIw1ANL+j+\nYqTqd9lG3QKBgAHqmyXPAFGDQ1ZdL3zuspI+A7pp/9BDW2nArMbj/intDvPtIwyS\ndpYK3FjW6H/MsdSbK5UjJiUMiPwziELtEfpUVo45S22WU8vSvYZM/ShpzmI1pc37\nriTjmfsl/ChWH26P9BjSGr2LjFB/FBp5+mklrfLn6loHAOx8MgDzcWRpAoGAFJaR\n0aMSvB4H+MOF0QdmmZ0YfTpz2QYrihz8nY469R5WIPf/utgMH6veGxfXWl4Z3FUP\nbV48byIcax6FAAF/N7QHDs7l4LXNhK/bYJPJabZEA8sXuxKpLnmyF+HBQaR44WDs\n/415x8y5ChNvznkSe6XYHiDNfnQ1ts4Es2ymjb0CgYAnQP0NQASnp4NzPdrdfbBm\nRVPsHqHwi1yp3VQGLK7CvcEX+75hk4vgmupZs+/BrkzJ9hJBf1g8FGv+69J/58Fz\nJdjqKayQJiLti+LHAL2o2eIHprThMM+TVAWRFIfVGXKd8HXEdDTARR779spYfF/8\ngcRiCjfGB6WAhWUGCf4ZDA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "biraiz@valiant-splicer-421319.iam.gserviceaccount.com",
+  "client_id": "113236388021122532749",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/biraiz%40valiant-splicer-421319.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
